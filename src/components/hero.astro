@@ -43,6 +43,7 @@ const {} = Astro.props;
     width: 100%;
     align-items: center;
     justify-items: center;
+    margin-bottom: 100px;
   }
 
   .hero_tekst {
@@ -89,5 +90,44 @@ const {} = Astro.props;
     background-color: #88beac;
     padding: 0.5rem;
     border-radius: 10px;
+  }
+
+  @media (max-width: 428px) {
+    @media (max-width: 428px) {
+      .hero__content {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        margin-bottom: 100px;
+      }
+
+      .hero_tekst {
+        max-width: 40ch;
+        padding: 0.5rem;
+        margin: 0;
+        line-height: 1.4;
+      }
+    }
+    .billeder_3 {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+    }
+    .vaskeri {
+      width: 70%;
+      height: 65%;
+      object-fit: cover;
+      border: 5px solid #f5b980;
+    }
+    .drenge {
+      width: 80%;
+      height: 80%;
+      object-fit: cover;
+      border: 5px solid #a2412e;
+    }
+    .henrikcap {
+      width: 70%;
+      height: 65%;
+      object-fit: cover;
+      border: 5px solid #88beac;
+    }
   }
 </style>
