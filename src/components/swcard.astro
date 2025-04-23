@@ -2,25 +2,155 @@
 const {} = Astro.props;
 ---
 
-<section class="singleview">
-  <img src="/images/card1.png" alt="net" />
+<section class="container">
+  <img src="/images/card1.png" alt="vare" class="product-image" />
   <article class="container_produkt">
     <div class="tekst_overskrift">
-      <h2>Unique Upcycled Bag</h2>
-      <p>DKK 1595,-</p>
+      <h3>Unique Upcycled bag</h3>
+      <p class="pris">399,00 DKK</p>
     </div>
     <div class="product-container">
-      <label for="size">Choose a size:</label>
+      <label for="size">Vælg størrelse:</label>
       <select id="size" class="size-selector">
         <option value="small">Small</option>
         <option value="medium">Medium</option>
         <option value="large">Large</option>
         <option value="xl">XL</option>
       </select>
-
-      <button class="add-to-cart">Add to Cart</button>
+      <button class="add-to-cart">Tilføj til kurv</button>
+    </div>
+    <div class="tekst_afsnit">
+      <h2>Produkt Beskrivelse</h2>
+      <p>
+        Vores upcycled net, er bestående af gamle sengelagner og, som vi har givet et nyt liv. Her har vi givet det et print, for at give det et nyt look. Nettene er lavet i 100% genanvendt polyester og er derfor et bæredygtigt valg. Nettene er
+        perfekte til at tage med på stranden, til at opbevare legetøj eller til at have med på festival.
+      </p>
     </div>
   </article>
 </section>
 
-<style></style>
+<style>
+  body {
+    background-color: #f2f0e8;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .product-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
+  .container_produkt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  label {
+    font-size: 1.2rem;
+    margin-bottom: -1.3rem;
+  }
+
+  .tekst_overskrift {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+  .pris {
+    font-size: 1.2rem;
+    margin-left: 6px;
+  }
+
+  .product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align content */
+    width: fit-content; /* Match the size of the content */
+    padding: 0.5rem 1rem; /* Same padding as the button */
+    background-color: #f2f0e8;
+    gap: 2rem;
+  }
+
+  .size-selector {
+    margin-bottom: 1rem;
+    width: 100%; /* Ensure it stretches within the container */
+    background-color: #f2f0e8;
+    border: 1px solid black;
+    font-size: 1rem;
+  }
+
+  .add-to-cart {
+    bottom: 125px;
+    left: 10px;
+    right: 10px;
+
+    background-color: #f2f0e8;
+    border: 1px solid black;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .tekst_afsnit {
+    margin-top: 2rem;
+    width: 60ch;
+  }
+
+  @media (max-width: 980px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .product-image {
+      max-width: 100%;
+    }
+
+    .tekst_afsnit {
+      width: 90%;
+    }
+    .container_produkt {
+      width: 100%;
+    }
+    .product-container {
+      width: 100%;
+      padding: 0;
+      gap: 1rem;
+    }
+    .size-selector {
+      width: 100%;
+    }
+    .add-to-cart {
+      width: 100%;
+      padding: 0.5rem;
+    }
+    .tekst_overskrift {
+      font-size: 1.5rem;
+    }
+    .pris {
+      font-size: 1rem;
+    }
+    label {
+      font-size: 1rem;
+      margin: 0 auto;
+    }
+    .tekst_afsnit {
+      font-size: 1rem;
+    }
+    .add-to-cart {
+      font-size: 1rem;
+    }
+    .size-selector {
+      font-size: 1rem;
+    }
+  }
+</style>
