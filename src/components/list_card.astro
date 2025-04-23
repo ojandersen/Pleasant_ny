@@ -18,6 +18,7 @@ console.log(data);
     <h2>Filtrer produkter</h2>
 
     <!-- Størrelse Filter -->
+    <section class="kategori">
     <div class="filter-group">
       <h3 class="filter-toggle">Størrelse</h3>
       <ul class="filter-list">
@@ -81,6 +82,7 @@ console.log(data);
         }
       </ul>
     </div>
+    <section/>
   </div>
   <section class="cards_flex">
     {
@@ -104,6 +106,10 @@ console.log(data);
 <style>
   html {
     background-color: #f2f0e8;
+    max-width:100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
   }
   .ooak {
     display: flex;
@@ -164,8 +170,8 @@ console.log(data);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
-    padding: 1rem;
     width: 100%;
+    padding-top:30px;
   }
   .card {
     position: relative;
@@ -245,15 +251,20 @@ console.log(data);
   @media (width <= 812px) {
     section.flex_container{
       display: block;
-      background-color:Red;
     }
     .filter-sidebar{
-      width: 100%;
+      width: 90%;
+
+    }
+
+    .kategori{
       display: flex;
-      flex-direction: row;
       justify-content: space-between;
     }
-  }
+    .filter-group{
+      grid-row: 2;
+    
+  }}
   @media (max-width: 428px) {
     .artikel_oversrkift {
       font-size: 2rem;
