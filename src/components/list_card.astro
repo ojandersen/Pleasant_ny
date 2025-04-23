@@ -1,6 +1,8 @@
 ---
-const url = "https://cyfoyamibtncrcptfnyz.supabase.co/rest/v1/pleasantprodukter";
-const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN5Zm95YW1pYnRuY3JjcHRmbnl6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUzMTQ1ODAsImV4cCI6MjA2MDg5MDU4MH0.61IR-M8WjxJ7_Oneju-ZBWnPIAlswSek42aMvJGgPbg"
+const url =
+  "https://cyfoyamibtncrcptfnyz.supabase.co/rest/v1/pleasantprodukter";
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN5Zm95YW1pYnRuY3JjcHRmbnl6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUzMTQ1ODAsImV4cCI6MjA2MDg5MDU4MH0.61IR-M8WjxJ7_Oneju-ZBWnPIAlswSek42aMvJGgPbg";
 const options = {
   headers: {
     apikey: key,
@@ -11,78 +13,94 @@ console.log(data);
 ---
 
 <div class="ooak"><img src="./ooak.png" alt="one of a kind" /></div>
+<section class="flex_container">
+  <div class="filter-sidebar">
+    <h2>Filtrer produkter</h2>
 
+    <!-- Størrelse Filter -->
+    <div class="filter-group">
+      <h3 class="filter-toggle">Størrelse</h3>
+      <ul class="filter-list">
+        {
+          ["Small", "Medium", "Large"].map((size) => (
+            <li>
+              <input type="checkbox" id={size} name="size" value={size} />
+              <label for={size}>{size}</label>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
 
-<div class="filter-sidebar">
-  <h2>Filtrer produkter</h2>
+    <!-- Style Filter -->
+    <div class="filter-group">
+      <h3 class="filter-toggle">Style</h3>
+      <ul class="filter-list">
+        {
+          ["Casual", "Formal", "Sporty"].map((style) => (
+            <li>
+              <input type="checkbox" id={style} name="style" value={style} />
+              <label for={style}>{style}</label>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
 
-  <!-- Størrelse Filter -->
-  <div class="filter-group">
-    <h3 class="filter-toggle">Størrelse</h3>
-    <ul class="filter-list">
-      {["Small", "Medium", "Large"].map(size => (
-        <li>
-          <input type="checkbox" id={size} name="size" value={size} />
-          <label for={size}>{size}</label>
-        </li>
-      ))}
-    </ul>
+    <!-- Farve Filter -->
+    <div class="filter-group">
+      <h3 class="filter-toggle">Farve</h3>
+      <ul class="filter-list">
+        {
+          ["Red", "Blue", "Green", "Black", "White"].map((color) => (
+            <li>
+              <input type="checkbox" id={color} name="color" value={color} />
+              <label for={color}>{color}</label>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <!-- Mønster Filter -->
+    <div class="filter-group">
+      <h3 class="filter-toggle">Mønster</h3>
+      <ul class="filter-list">
+        {
+          ["Plain", "Striped", "Checked"].map((pattern) => (
+            <li>
+              <input
+                type="checkbox"
+                id={pattern}
+                name="pattern"
+                value={pattern}
+              />
+              <label for={pattern}>{pattern}</label>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </div>
-
-  <!-- Style Filter -->
-  <div class="filter-group">
-    <h3 class="filter-toggle">Style</h3>
-    <ul class="filter-list">
-      {["Casual", "Formal", "Sporty"].map(style => (
-        <li>
-          <input type="checkbox" id={style} name="style" value={style} />
-          <label for={style}>{style}</label>
-        </li>
-      ))}
-    </ul>
-  </div>
-
-  <!-- Farve Filter -->
-  <div class="filter-group">
-    <h3 class="filter-toggle">Farve</h3>
-    <ul class="filter-list">
-      {["Red", "Blue", "Green", "Black", "White"].map(color => (
-        <li>
-          <input type="checkbox" id={color} name="color" value={color} />
-          <label for={color}>{color}</label>
-        </li>
-      ))}
-    </ul>
-  </div>
-
-  <!-- Mønster Filter -->
-  <div class="filter-group">
-    <h3 class="filter-toggle">Mønster</h3>
-    <ul class="filter-list">
-      {["Plain", "Striped", "Checked"].map(pattern => (
-        <li>
-          <input type="checkbox" id={pattern} name="pattern" value={pattern} />
-          <label for={pattern}>{pattern}</label>
-        </li>
-      ))}
-    </ul>
-  </div>
-</div>
-<section>
-  
-  {data.map(product => (
-    <article class="card">
-      <img src={product.image_URL} alt={product.productname} class="card-image" />
-      <div class="card-content">
-        <h3>{product.productname}</h3>
-        <p>{product.price} kr</p>
-      </div>
-      <button class="add-to-cart">Tilføj til kurv</button>
-    </article>
-  ))}
-
+  <section class="cards_flex">
+    {
+      data.map((product) => (
+        <article class="card">
+          <img
+            src={product.image_URL}
+            alt={product.productname}
+            class="card-image"
+          />
+          <div class="card-content">
+            <h3>{product.productname}</h3>
+            <p>{product.price} kr</p>
+          </div>
+          <button class="add-to-cart">Tilføj til kurv</button>
+        </article>
+      ))
+    }
+  </section>
 </section>
-
 <style>
   html {
     background-color: #f2f0e8;
@@ -96,70 +114,70 @@ console.log(data);
     width: 15%;
   }
   /* Sidebar Styling */
-  .container {
-    display: flex;
-    gap: 2rem; 
-  }
 
   .filter-sidebar {
-    width: 20%; 
+    width: 20%;
     padding: 1rem;
     background-color: #f2f0e8;
     overflow-y: auto;
   }
 
-/* Filtergruppe og linjer */
-.filter-group {
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #ddd; 
-}
+  /* Filtergruppe og linjer */
+  .filter-group {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+  }
 
-.filter-group h3 {
-  font-size: 1.1rem;
-  font-weight: bold;
-  cursor: pointer;
-}
+  .filter-group h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
 
-/* Skjult indhold */
-.filter-list {
-  list-style-type: none;
-  padding: 0;
-  display: none; 
-  margin-top: 10px;
-}
+  /* Skjult indhold */
+  .filter-list {
+    list-style-type: none;
+    padding: 0;
+    display: none;
+    margin-top: 10px;
+  }
 
-.filter-group.open .filter-list {
-  display: block; 
-}
+  .filter-group.open .filter-list {
+    display: block;
+  }
 
-.filter-group li {
-  margin-bottom: 0.5rem;
-}
+  .filter-group li {
+    margin-bottom: 0.5rem;
+  }
 
-.filter-group input {
-  margin-right: 0.5rem;
-}
-
-
+  .filter-group input {
+    margin-right: 0.5rem;
+  }
+  /* SECTION FLEX */
+  section.flex_container {
+    display: flex;
+    width: 100%;
+  }
   /*NY SEKTION*/
-  section {
+  section .cards_flex {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
     padding: 1rem;
+    width: 100%;
   }
   .card {
-  position: relative; 
-  display: grid;
-  grid-template-columns: 1fr;
-  overflow: hidden;
-  max-width: 100%;
-  text-align: center;
-  font-family: "Poppins", sans-serif;
-  border: 2px solid transparent;
-  padding: 0.5rem;
-}
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    max-width: 100%;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    border: 2px solid transparent;
+    padding: 0.5rem;
+  }
 
   .card-image {
     width: 100%;
@@ -168,8 +186,8 @@ console.log(data);
   }
 
   .card-content {
-  text-align: center;
-}
+    text-align: center;
+  }
 
   .card-description {
     font-size: 1rem;
@@ -186,19 +204,19 @@ console.log(data);
     overflow: hidden;
   }
   .add-to-cart {
-  position: absolute;
-  bottom: 125px;
-  left: 10px;
-  right: 10px;
-  display: none; 
-  background-color: #f2f0e8;
-  border: 1px solid black;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: bold;
-  text-align: center;
-  cursor: pointer;
-}
+    position: absolute;
+    bottom: 125px;
+    left: 10px;
+    right: 10px;
+    display: none;
+    background-color: #f2f0e8;
+    border: 1px solid black;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+  }
 
   .card:hover .add-to-cart {
     display: block;
@@ -207,7 +225,6 @@ console.log(data);
   @media (min-width: 429px) {
     .add-to-cart {
       display: block;
-      
     }
   }
 
@@ -241,10 +258,10 @@ console.log(data);
   }
 </style>
 <script>
-  document.querySelectorAll('.filter-toggle').forEach(item => {
-    item.addEventListener('click', () => {
+  document.querySelectorAll(".filter-toggle").forEach((item) => {
+    item.addEventListener("click", () => {
       const parent = item.parentElement;
-      parent.classList.toggle('open');
+      parent.classList.toggle("open");
     });
   });
 </script>
