@@ -157,7 +157,7 @@ console.log(data);
   /* SECTION FLEX */
   section.flex_container {
     display: flex;
-    width: 100%;
+    width: 100vw;
   }
   /*NY SEKTION*/
   section .cards_flex {
@@ -242,7 +242,18 @@ console.log(data);
   .card:hover .add-to-cart {
     display: block;
   }
-
+  @media (width <= 812px) {
+    section.flex_container{
+      display: block;
+      background-color:Red;
+    }
+    .filter-sidebar{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
   @media (max-width: 428px) {
     .artikel_oversrkift {
       font-size: 2rem;
