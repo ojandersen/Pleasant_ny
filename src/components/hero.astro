@@ -2,22 +2,17 @@
 const {} = Astro.props;
 ---
 
-<img src="/images/hero3.png" alt="hero" />
+<video class="hero-video" autoplay muted loop>
+  <source src="" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
 
 <h2>Skil dig ud fra de andre på gaden</h2>
 
 <sektion class="hero__content">
-  <p class="hero_tekst">
-    Pleasant lancerer en ny kollektion, der garanterer, at du skiller dig ud fra
-    mængden. Hver style er upcyclet af glemte tekstiler og bærer på sin helt
-    egen historie.
-  </p>
+  <p class="hero_tekst">Pleasant lancerer en ny kollektion, der garanterer, at du skiller dig ud fra mængden. Hver style er upcyclet af glemte tekstiler og bærer på sin helt egen historie.</p>
 
-  <p class="hero_tekst">
-    Vi ønsker at give hvert item nyt liv ved at lade det blive en del af din
-    historie. Bliv one of a kind med vores nye, helt unikke styles, der
-    afspejler præcis, hvem du er.
-  </p>
+  <p class="hero_tekst">Vi ønsker at give hvert item nyt liv ved at lade det blive en del af din historie. Bliv one of a kind med vores nye, helt unikke styles, der afspejler præcis, hvem du er.</p>
 </sektion>
 
 <sektion class="billeder_3">
@@ -29,12 +24,18 @@ const {} = Astro.props;
   <img src="/images/henrikcap.jpg" alt="hero" class="henrikcap" />
 </sektion>
 
-<img src="/images/citat.png" alt="citat" />
+<img src="/images/citat.png" alt="citat" class="catchphrase" />
 
 <style>
-  img {
+  .catchphrase {
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .hero-video {
     width: 100%;
     height: auto;
+    object-fit: cover;
   }
 
   h2 {
@@ -49,16 +50,16 @@ const {} = Astro.props;
   }
   .hero__content {
     display: flex;
-    gap: 1rem;
+    gap: 8rem;
 
     width: 100%;
 
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 100px;
   }
 
   .hero_tekst {
-    font-size: 2rem;
+    font-size: 1.4rem;
     color: #333;
     font-family: "new-spirit", serif;
     line-height: 1.5;
@@ -136,6 +137,10 @@ const {} = Astro.props;
       height: 65%;
       object-fit: cover;
       border: 5px solid #88beac;
+    }
+
+    h2 {
+      font-size: 2.5rem;
     }
   }
 </style>
