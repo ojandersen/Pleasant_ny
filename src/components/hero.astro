@@ -7,9 +7,17 @@ const {} = Astro.props;
 <h2>Skil dig ud fra de andre på gaden</h2>
 
 <sektion class="hero__content">
-  <p class="hero_tekst">Pleasant lancerer en ny kollektion, der garanterer, at du skiller dig ud fra mængden. Hver style er upcyclet af glemte tekstiler og bærer på sin helt egen historie.</p>
+  <p class="hero_tekst">
+    Pleasant lancerer en ny kollektion, der garanterer, at du skiller dig ud fra
+    mængden. Hver style er upcyclet af glemte tekstiler og bærer på sin helt
+    egen historie.
+  </p>
 
-  <p class="hero_tekst">Vi ønsker at give hvert item nyt liv ved at lade det blive en del af din historie. Bliv one of a kind med vores nye, helt unikke styles, der afspejler præcis, hvem du er.</p>
+  <p class="hero_tekst">
+    Vi ønsker at give hvert item nyt liv ved at lade det blive en del af din
+    historie. Bliv one of a kind med vores nye, helt unikke styles, der
+    afspejler præcis, hvem du er.
+  </p>
 </sektion>
 
 <sektion class="billeder_3">
@@ -30,9 +38,9 @@ const {} = Astro.props;
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: left;
-    padding: 2rem;
+    padding: 1rem;
     color: #333;
     font-family: "new-spirit", serif;
   }
@@ -40,22 +48,22 @@ const {} = Astro.props;
     font-family: "new-spirit", serif;
   }
   .hero__content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     gap: 1rem;
+
     width: 100%;
-    align-items: center;
-    justify-items: center;
+
+    justify-content: space-between;
     margin-bottom: 100px;
   }
 
   .hero_tekst {
-    font-size: 1.2rem;
+    font-size: 2rem;
     color: #333;
     font-family: "new-spirit", serif;
     line-height: 1.5;
     padding: 1rem;
-    max-width: 50ch;
+    max-width: 500px;
   }
 
   .billeder_3 {
@@ -90,28 +98,23 @@ const {} = Astro.props;
     font-size: 1.2rem;
     cursor: pointer;
     margin-top: 1rem;
-background: none;
+    background: none;
     border: none;
     border-bottom: solid 1px black;
     font-family: "new-spirit", serif;
-
   }
 
-  @media (max-width: 428px) {
-    @media (max-width: 428px) {
-      .hero__content {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-        margin-bottom: 100px;
-      }
-
-      .hero_tekst {
-        max-width: 40ch;
-        padding: 0.5rem;
-        margin: 0;
-        line-height: 1.4;
-      }
+  @media (max-width: 720px) {
+    .hero__content {
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 100px;
     }
+
+    .hero_tekst {
+      max-width: 700px;
+    }
+
     .billeder_3 {
       grid-template-columns: 1fr 1fr 1fr;
       gap: 2rem;

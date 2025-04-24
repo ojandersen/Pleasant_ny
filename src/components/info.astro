@@ -2,150 +2,150 @@
 const {} = Astro.props;
 ---
 
-<div class="center-container">
-  <img src="/images/h2ny.png" alt="overskrift" class="h2_ny" />
-</div>
-
 <sektion class="info_1">
+  <div class="center-container">
+    <img src="/images/h2ny.png" alt="overskrift" class="h2_ny" />
+  </div>
   <p class="info_tekst1">
-    Hos Pleasant er kærligheden til naturen lige så vigtig som kærligheden til godt lavet tøj og unikke styles. Vi ønsker ikke bare at gøre dig pleasant med vores unikke udvalg, men også sikre, at tøjet bliver produceret på en måde, der gør vores
-    planet pleasant. <br />
-    <br /> Hos Pleasant er kærligheden til naturen lige så vigtig som kærligheden til veludført tøj og unikke styles. Vi ønsker ikke bare at gøre dig pleasant.
+    Hos Pleasant er kærligheden til naturen lige så vigtig som kærligheden til
+    godt lavet tøj og unikke styles. Vi ønsker ikke bare at gøre dig pleasant
+    med vores unikke udvalg, men også sikre, at tøjet bliver produceret på en
+    måde, der gør vores planet pleasant. <br />
+    <br /> Hos Pleasant er kærligheden til naturen lige så vigtig som kærligheden
+    til veludført tøj og unikke styles. Vi ønsker ikke bare at gøre dig pleasant.
   </p>
 
   <img src="/images/info_billed1.png" alt="pleasant billed" class="billed1" />
 </sektion>
 
 <sektion class="info_2">
-  <h2 class="overskrift2">Brug af upcyclede materialer</h2>
-  <p class="info_tekst2">
-    Ved hjælp af upcycling tager vi et eksisterende produkt og forvandler det til noget nyt med højere værdi. Vi bruger genanvendte dynebetræk, gardiner og duge, som allerede har været igennem flere livscyklusser, og giver dem nyt liv i form af tøj
-    med en helt særlig stil.
-  </p>
   <img src="/images/toj.png" alt="toj" class="billed2" />
-</sektion>
 
-<style>
-  .center-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: -1.5rem;
-  }
+  <div class="mega_flex">
+    <h2 class="overskrift2">Brug af upcyclede materialer</h2>
+    <p class="info_tekst2">
+      Ved hjælp af upcycling tager vi et eksisterende produkt og forvandler det
+      til noget nyt med højere værdi. Vi bruger genanvendte dynebetræk, gardiner
+      og duge, som allerede har været igennem flere livscyklusser, og giver dem
+      nyt liv i form af tøj med en helt særlig stil.
+    </p>
+    <div></div>
+  </div>
 
-  .h2_ny {
-    width: 90vw;
-    height: auto;
-    padding: 2rem;
-    margin-left: 5.5rem;
-    z-index: 2;
-    font-family: "New Spirit", sans-serif;
-  }
-  .info_1 {
-    display: grid;
-    grid-template-columns: 1fr;
-    width: 100%;
-    padding: 2rem;
-  }
-  .info_tekst1 {
-    display: grid;
-    font-size: 1.2rem;
-    color: #333;
-    font-family: "new-spirit", serif;
-    line-height: 1.5;
-    width: 35ch;
-  }
-  .billed1 {
-    display: grid;
-    width: 70%;
-    height: auto;
-    padding: 2rem;
-  }
-  .info_2 {
-    display: grid;
-    grid-template-columns: 1fr;
-    width: 100%;
-    padding: 1.3rem;
-  }
-  .info_tekst2 {
-    font-size: 1.2rem;
-    color: #333;
-    font-family: "new-spirit", serif;
-    line-height: 1.5;
-    width: 38ch;
-    padding-top: 20px;
-  }
-  .billed2 {
-    width: 90%;
-    height: auto;
-    object-fit: cover;
-    text-align: center;
-  }
-
-  @media (min-width: 429px) {
-    .h2_ny {
-      width: 50%;
-      height: auto;
-      padding: 2rem;
-      margin-left: 5rem;
-      z-index: 2;
-      margin-bottom: -200px;
-      font-family: "New Spirit", sans-serif;
+  <style>
+    .center-container {
+      position: relative;
     }
+
+    .h2_ny {
+      position: absolute;
+      left: 65%;
+      width: 70%;
+    }
+
     .info_1 {
-      grid-template-columns: 1fr 1fr;
+      display: grid;
+      grid-template-columns: 1fr;
       width: 100%;
-      height: auto;
+      padding: 2rem;
     }
     .info_tekst1 {
-      grid-column: 1 / 2;
-      display: flex;
-      font-size: 1.5rem;
+      display: grid;
+      font-size: 1.8rem;
+      color: #333;
+      font-family: "new-spirit", serif;
+      line-height: 1.5;
       width: 90%;
-      place-items: center;
     }
     .billed1 {
-      grid-column: 2 / 3;
-      justify-self: end;
-      width: 85%;
-      height: 100%;
-      object-fit: cover;
+      display: grid;
+      width: 70%;
+      height: auto;
+      padding: 2rem;
     }
     .info_2 {
-      grid-template-columns: 1fr 2fr 2fr;
-      width: 100%;
-      height: auto;
-      margin: 0 auto;
-      padding: 0;
-      padding-top: 2rem;
-    }
-    .overskrift2 {
       display: flex;
-      grid-column: 3 / 4;
-      grid-row: 1;
-      justify-content: center;
-      font-size: 2rem;
+      gap: 2rem;
       font-family: "new-spirit", serif;
     }
+    .overskrift2 {
+      font-size: 2rem;
+    }
     .info_tekst2 {
-      grid-column: 3 / 4;
-      grid-row: 1;
       font-size: 1.5rem;
-      width: 40ch;
-      display: flex;
-
-      justify-content: center;
-      place-items: center;
     }
     .billed2 {
-      grid-column: 1 / 3;
-      grid-row: 1;
-
-      width: 95%;
-      height: 100%;
+      width: 50vw;
+      height: 0 auto;
       object-fit: cover;
-      margin: 0;
-      padding: 0;
     }
-  }
-</style>
+
+    @media (max-width: 431px) {
+      .h2_ny {
+        left: 10%;
+      }
+
+      img.billed2 {
+        order: 3;
+      }
+      .info_2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        place-items: center;
+        font-family: "new-spirit", serif;
+      }
+      .overskrift2 {
+        text-align: center;
+        font-size: 2rem;
+      }
+      .info_tekst2 {
+        padding: 10px;
+        font-size: 1.8rem;
+        max-width: 350px;
+        place-self: center;
+      }
+      .billed2 {
+        grid-column: 1 / 2;
+        grid-row: 1;
+        width: 85%;
+      }
+    }
+    @media (min-width: 431px) {
+      .info_1 {
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        height: auto;
+      }
+      .info_tekst1 {
+        grid-column: 1 / 2;
+        display: flex;
+        font-size: 1.5rem;
+        place-items: center;
+      }
+      .billed1 {
+        grid-column: 2 / 3;
+        justify-self: end;
+        width: 85%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    @media (width <= 850px) {
+      .h2_ny {
+        position: relative;
+        width: 100%;
+      }
+
+      /* .info_tekst2{
+      font-size: 0.8rem;
+    }
+    .overskrift2{
+      font-size:1.2rem;
+    }
+    .billed2 {
+
+    } */
+    }
+  </style>
+</sektion>
