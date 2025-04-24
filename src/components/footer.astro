@@ -1,0 +1,32 @@
+---
+const {} = Astro.props;
+---
+
+<img src="/images/footerdesk.png" alt="footer" class="footer-desktop" />
+<img src="/images/footermobile.png" alt="footermobile" class="footer-mobile" />
+
+<style>
+  .footer-desktop {
+    padding-top: 2rem;
+  }
+  .footer-mobile {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .footer-desktop {
+      display: none;
+    }
+
+    .footer-mobile {
+      display: block;
+      padding-top: 2rem;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+</style>
