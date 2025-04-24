@@ -19,7 +19,9 @@ console.log(data);
   {
     data.map((product) => (
       <article class="card">
-        <img src={product.image_URL} alt={product.productname} class="card-image" />
+        <a href="/swpleasant">
+          <img src={product.image_URL} alt={product.productname} class="card-image" />
+        </a>
         <div class="card-content">
           <h3>{product.productname}</h3>
           <p>{product.price} kr</p>
